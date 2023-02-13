@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
       title: "Todo List Application",
       theme: ThemeData(brightness: Brightness.light),
       debugShowCheckedModeBanner: false,
+      routes: {
+
+      },
       home: const Home(),
     );
   }
