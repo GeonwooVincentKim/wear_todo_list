@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:rotary_scrollbar/rotary_scrollbar.dart';
+import 'package:rotary_scrollbar/widgets/rotary_wrapper.dart';
 import 'package:wear_todo_list/screens/home.dart';
 import 'package:wear_todo_list/shared/design/time_gradient.dart';
 
@@ -16,8 +18,11 @@ class _WatchActiveState extends State<WatchActive> {
   String testDate = DateFormat("yyyy MM dd").format(DateTime.now());
   var dt = DateTime.now();
 
+  final scrollController = ScrollController();
+
   @override
   void initState() {
+    scrollController.dispose();
     super.initState();
   }
 
@@ -26,9 +31,31 @@ class _WatchActiveState extends State<WatchActive> {
     return Scaffold(
       backgroundColor: Colors.black54,
       body: TimeGradient(
-        child: Center(
-          child: Text(testDate, style: const TextStyle(color: Colors.white),),
-        ),
+        child: RotaryScrollWrapper(
+          rotaryScrollbar: RotaryScrollbar(
+            controller: scrollController
+          ),
+          child: ListView.builder(
+            controller: scrollController,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 10
+                ),
+                child: Container(
+                  color: Colors.blue.withRed(((255 / 29) * index).toInt()),
+                  width: 50,
+                  height: 50,
+                  child: Center(child: Text(('box $index')))
+                )
+              );
+            },
+            itemCount: 30,
+          )
+        )
+        // child: Center(
+        //   child: Text(testDate, style: const TextStyle(color: Colors.white),),
+        // ),
       )
     );
   }
