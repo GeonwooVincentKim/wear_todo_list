@@ -22,8 +22,13 @@ class _WatchActiveState extends State<WatchActive> {
 
   @override
   void initState() {
-    scrollController.dispose();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
   }
 
   @override
