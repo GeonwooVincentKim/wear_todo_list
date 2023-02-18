@@ -47,9 +47,10 @@ class TimeGradient extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: timeColors[currentHour],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter),
+          colors: timeColors[currentHour],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter
+        ),
       ),
       child: child,
     );
