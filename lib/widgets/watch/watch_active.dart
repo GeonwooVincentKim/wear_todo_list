@@ -58,9 +58,6 @@ class _WatchActiveState extends State<WatchActive> {
             itemCount: 30,
           )
         )
-        // child: Center(
-        //   child: Text(testDate, style: const TextStyle(color: Colors.white),),
-        // ),
       )
     );
   }
