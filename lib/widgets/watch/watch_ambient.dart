@@ -3,6 +3,7 @@ import 'package:wear_todo_list/screens/home.dart';
 
 class WatchAmbient extends StatelessWidget {
   final HomeStateController state;
+  
   const WatchAmbient({super.key, required this.state});
 
   @override
