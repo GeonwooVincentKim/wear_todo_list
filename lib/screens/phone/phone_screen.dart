@@ -16,9 +16,7 @@ class PhoneScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: Text("Testing"),
-              ),
+              Expanded(child: Text("Testing")),
               Padding(
                 padding: const EdgeInsets.only(bottom: 24),
                 child: Text(
